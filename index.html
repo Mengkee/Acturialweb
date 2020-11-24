@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script src="./js/main.js"></script>
+    <title>Conversion of different forms of interest</title>
+  </head>
+
+  <body>
+
+    <div class="jumbotron">
+  <h1 class="display-4">Convert actuarial units</h1>
+  <p class="lead">It currently supports nominal interest rate actual interest rate and so on !</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <!--<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>-->
+</div>
+
+
+    <form>
+      <div class="form-row">
+    <div class="col-md-4 mb-3">
+
+      <label for="Input">Input type</label>
+      <select class="form-control" id="SelectInput" onchange="Hide1()">
+        <option> Nominal interest rate \( i^{m} \) </option>
+        <option> Actual interest rate \( i \) </option>
+        <option> Force of interest \( \sigma \) </option>
+        <option> Actual discount rate \( d \) </option>
+        <option> Nominal discount rate \( d^{m} \) </option>
+      </select>
+ </div>
+    <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+-->
+  <div class="col-md-4 mb-3">
+  <label for="validationServer02">Value Input</label>
+  <br>
+      <input type="text" class="form-control1" id="InterestInput" placeholder="InterestInput" value="0.03" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4 mb-3" id = "PaymentTimesForm">
+    <label for="validationServer02">Payment Times</label>
+    <br>
+        <input type="text" class="form-control1" id="PaymentTimes" placeholder="Payment times per term" value="12" required>
+      </div>
+ </div>
+ <div class="form-row">
+    <div class="col-md-4 mb-3">
+    <div class="form-group">
+      <label for="Output">Convert to</label>
+      <select class="form-control" id="SelectOutput"  onchange="Hide2()">
+        <option> Nominal interest rate \( i^{m} \) </option>
+        <option> Actual interest rate \( i \) </option>
+        <option> Force of interest \( \sigma \) </option>
+        <option> Actual discount rate \( d \) </option>
+        <option> Nominal discount rate \( d^{m} \) </option>
+      </select>
+    <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  -->
+    </div>
+
+    </div>
+    <div class="col-md-4 mb-3" id = "PaymentTimesForm2">
+    <label for="validationServer03">Payment Times</label>
+    <br>
+        <input type="text" class="form-control1" id="PaymentTimes2" placeholder="Payment times per term" value="12" required>
+      </div>
+
+  </div>
+  <button type='button' onclick="Calculate()" class="btn btn-primary">Convert</button>
+  </form>
+<hr class="my-4">
+
+<div class="card">
+  <h5 class="card-header">The answer is</h5>
+  <div class="card-body">
+    <h5 class="card-title" id = "AnswerTitle"></h5>
+    <p class="card-text" id = "Answer"></p>
+  </div>
+</div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
